@@ -1,7 +1,9 @@
 export default {
-  install (app, config) {
-    this.config = config
-    this.$data.sources.push(this)
+  install (app, options) {
+    this.options = options
+    app.config.sources = app.config.sources || []
+    app.config.sources.push(this)
+    // app.$data.sources.push(this)
   },
   async more () {
     const { host, id } = this.options.mastodon
