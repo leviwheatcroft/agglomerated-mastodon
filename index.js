@@ -1,8 +1,11 @@
 export default {
   install (app, options) {
     this.options = options
-    app.config.sources = app.config.sources || []
-    app.config.sources.push(this)
+
+    app.config.globalProperties.$agglomeratedSources =
+      app.config.globalProperties.$agglomeratedSources || []
+    app.config.globalProperties.$agglomeratedSources.push(this)
+    console.log(app)
     // app.$data.sources.push(this)
   },
   async more () {
