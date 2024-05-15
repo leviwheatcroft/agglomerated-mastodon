@@ -1,3 +1,4 @@
+import MastodonRenderer from './MastodonRenderer.vue'
 export default {
   init (options) {
     this.options = options
@@ -8,5 +9,10 @@ export default {
     const items = await res.json()
     console.log(items)
     return items
+  },
+  render (item) {
+    if (item.source === 'mastodon') {
+      return MastodonRenderer
+    }
   }
 }
