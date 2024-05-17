@@ -1,4 +1,4 @@
-import MastodonRenderer from './MastodonRenderer.vue'
+import Mastodon from './Mastodon.vue'
 export default {
   init (options) {
     this.options = options
@@ -12,7 +12,7 @@ export default {
   },
   render (item) {
     if (item.source === 'mastodon') {
-      return MastodonRenderer
+      return Mastodon
     }
   }
 }
